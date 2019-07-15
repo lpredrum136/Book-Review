@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title%}
+    Login
+{% endblock %}
+
+{% block notLoggedIn %}
+
+    <div class="bg">
+        <div id="cover-caption">
+            <div id="container" class="container">
+                <div class="row text-white">
+                    <div class="col-sm-6 offset-sm-3 text-center">
+                        <h1 id="frontPage">Kitty's Book Review</h1>
+                        <div class="alert alert-danger" id="NotAvailable">{{ message }}</div>
+                        <div class="info-form">
+                            <form action="/login" method="POST" class="form-inline justify-content-center mb-2">
+                                <div class="form-group mr-1">
+                                    <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text" required/>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" name="password" placeholder="Password" type="password" required/>
+                                </div>
+                                <button type="submit" class="btn btn-primary ml-1">Login</button>
+                            </form>
+                        </div>
+                        <a href="/register" class="btn btn-light" role="button">Don't have an account? <span id="registerOutline" class="text-primary"><strong>Register</strong></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

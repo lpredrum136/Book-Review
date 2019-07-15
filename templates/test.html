@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>siblings demo</title>
+  <style>
+  ul {
+    float: left;
+    margin: 5px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  p {
+    color: blue;
+    margin: 10px 20px;
+    font-size: 16px;
+    padding: 5px;
+    font-weight: bolder;
+  }
+  .hilite {
+    background: yellow;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+ 
+<ul>
+  <li>One</li>
+  <li>Two</li>
+  <li class="hilite">Three</li>
+  <li class="change">Four</li>
+</ul>
+ 
+<ul>
+  <li>Five</li>
+  <li>Six</li>
+  <li class="change">Seven</li>
+</ul>
+ 
+<ul>
+  <li>Eight</li>
+  <li class="hilite">Nine</li>
+  <li class="change">Ten</li>
+  <li class="hilite">Eleven</li>
+</ul>
+ 
+<p>Unique siblings: <b></b></p>
+ 
+<script>
+var leno = $(".hilite");
+leno.each(function() {
+  $(this).css('color', 'red');
+});
+</script>
+ 
+</body>
+</html>

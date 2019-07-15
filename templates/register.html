@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block notLoggedIn %}
+    <!--Register form-->
+    <div class="bg">
+        <div id="cover-caption">
+            <div id="container" class="container">
+                <div class="row text-white">
+                    <div class="col-sm-6 offset-sm-3 text-center">
+                        <h1 id="frontPage">Register</h1>
+                        <div class="alert alert-danger" id="NotAvailable">{{ message }}</div>
+                        <div class="info-form">
+                            <form action="/register" method="POST" class="justify-content-center mb-2" oninput='confirmation.setCustomValidity(confirmation.value != password.value ? "Passwords do not match." : "")'>
+                                <div class="form-group">
+                                    <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text" required/>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" name="password" placeholder="Password" type="password" required 
+                                    data-toggle="popover" title="Password must contain:" data-content="<ul><li>An uppercase letter</li><li>A lowercase letter</li><li>A number</li><li>Minimum 8 characters</li></ul>" data-html="true"
+                                    data-trigger="focus" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" /><!--We use the pattern attribute (with a regular expression) inside the password field to set a 
+                                        restriction for submitting the form: it must contain 8 or more characters that are of at least one number, and one uppercase and lowercase letter.-->
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" name="confirmation" placeholder="Confirm Password" type="password" required/>
+                                </div>
+                                <button class="btn btn-primary" type="submit">Register</button>
+                            </form>
+                        </div>
+                        <a href="/login" class="btn btn-light" role="button">Already have an account? <span id="registerOutline" class="text-primary"><strong>Login</strong></span></a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+
+    
+{% endblock %}

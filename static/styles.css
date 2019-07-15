@@ -1,0 +1,105 @@
+body, html {
+    height: 100%;
+}
+
+/* Front page has full background */
+.bg {
+    /* The image used */
+    background-image: url("/static/background.jpg");
+      
+    /* Full height */
+    height: 100%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    
+    /* Needed to position the navbar */
+    position: relative;
+
+    /* Center the search box in index.html */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#cover-caption {
+    width: 100%;
+}
+
+/* Position the navbar container on top of the whole background image (Only Logged In, in home page after logging in) */
+#navbarIndex {
+    position: absolute;
+    width: 100%;
+}
+
+/* the text in front page, so that it is easily seen */
+#frontPage {
+    text-shadow: 2px 2px black;
+}
+
+/* the word register, to stand out from its background */
+#registerOutline {    
+    text-shadow:
+    -0.25px -0.25px 0 white,
+    0.25px -0.25px 0 white,
+    -0.25px 0.25px 0 white,
+    0.25px 0.25px 0 white; 
+}
+
+/* Stylize typeahead.js a la http://twitter.github.io/typeahead.js/css/examples.css */
+.tt-menu
+{
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 1px;
+    max-height: 150px;
+    overflow-y: auto;
+    width: 400px;
+}
+.tt-suggestion.tt-cursor {
+    background-color: #0097cf;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+.tt-suggestion {
+    margin: 0;
+    padding: 6px 12px;
+    color: black;
+    text-align: left;
+}
+
+/* Display result books in flex style with 6 per rows */
+.child {
+    flex: 1 0 15%;
+}
+
+/* author name is always in the bottom of the body of the book */
+.card-body {
+    position: relative;
+}
+
+#author {
+    position: absolute;
+    bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+
+/* star rating */
+.star-rating, .star-rating-reviewed {
+    line-height:32px;
+    font-size:1.25em;
+}
+  
+.star-rating .fa-star, .star-rating-reviewed .fa-star {
+    color: #fbff00;
+    text-shadow: 0 0 3px #000000;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}

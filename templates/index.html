@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Kitty's Book Review
+{% endblock %}
+
+{% block LoggedIn %}
+    
+    <div class="bg">
+        <nav id="navbarIndex" class="navbar navbar-expand-sm bg-light navbar-light sticky-top mb-2 py-0">
+            <!-- Brand/logo -->
+            <a class="navbar-brand" href="/">
+                <img src="/static/kittylogo.jpg" alt="kitty" style="width: 40px;">
+            </a>
+    
+            <!--Toggler/Collapsible button-->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <!--Navbar Links-->
+            <div class="collapse navbar-collapse justify-content-between" id="collapsibleNavbar">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/"><h1><strong>Kitty's Book Review</strong></h1></a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-danger text-white" href="/logout">Log Out</a>
+                    </li>
+                </ul>
+            </div>       
+        </nav>
+
+        <div id="cover-caption">
+            <div id="container" class="container">
+                <div class="row text-white">
+                    <div class="col-sm-6 offset-sm-3 text-center">
+                        <h1 id="frontPage">Kitty's Book Review</h1>
+                        <div class="info-form">
+                            <form action="/fullSearch" method="POST" class="form-inline justify-content-center mb-2">
+                                <div class="form-group mr-1">
+                                    <input autocomplete="off" autofocus class="form-control" name="q" id="query" placeholder="ISBN, Name or Author" type="text" required/>
+                                </div>
+                                <button type="submit" class="btn btn-primary ml-1">Search</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!--action="/search" method="POST" name="q"-->
+{% endblock %}
